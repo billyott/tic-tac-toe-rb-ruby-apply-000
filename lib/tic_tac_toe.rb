@@ -43,20 +43,6 @@ def valid_move?(board, index)
 end
 
 
-# def turn(board)
-#   puts "Please enter 1-9:"
-#   move = gets
-#   indexed_move = input_to_index(move)
-#   until valid_move?(board, indexed_move)
-#     puts "Sorry, that's not a valid move. Try again:"
-#     move = gets
-#     indexed_move = input_to_index(move)
-#   end
-#   board[indexed_move] = "X"
-#   display_board(board)
-# end
-
-
 def turn_count(board)
   turns = 0
   board.each do |space|
@@ -178,7 +164,7 @@ end
 
 
 def play(board)
-  while !over?(board)
+  while over?(board) == false
     turn(board)
   end
   if won?(board)
