@@ -43,29 +43,17 @@ def valid_move?(board, index)
 end
 
 
-# def turn(board)
-#   puts "Please enter 1-9:"
-#   move = gets
-#   indexed_move = input_to_index(move)
-#   until valid_move?(board, indexed_move)
-#     puts "Sorry, that's not a valid move. Try again:"
-#     move = gets
-#     indexed_move = input_to_index(move)
-#   end
-#   board[indexed_move] = "X"
-#   display_board(board)
-# end
-
-def turn_count(array)
-  counter = 0
-  array.each do |element|
-    if (element == "X" || element == "O")
-      counter += 1
-    else
-      # do nothing
-    end
+def turn(board)
+  puts "Please enter 1-9:"
+  move = gets
+  indexed_move = input_to_index(move)
+  until valid_move?(board, indexed_move)
+    puts "Sorry, that's not a valid move. Try again:"
+    move = gets
+    indexed_move = input_to_index(move)
   end
-  return counter
+  board[indexed_move] = "X"
+  display_board(board)
 end
 
 
